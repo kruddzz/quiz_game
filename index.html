@@ -11,6 +11,7 @@
     
 </head>
 <body>
+    <!-- header  -->
     <Header class="row p-1 mx-1">
         <div class="col-sm-6 text-left d-flex justify-content-start">
                 <h4 id="highscores">
@@ -23,14 +24,51 @@
                 <h4 id="timer">Time: 75</h4>
         </div>
     </Header>
-    <div class="jumbotron bg-white mx-auto" style="width: 600px; text-align: center;">
-        <h1 class="display-4">Coding Quiz</h1>
-        <p class="lead">
+    <div class="jumbotron bg-white mx-auto" style="width: 600px;">
+        <!-- Start Quiz secion -->
+        <section id="startQuiz" style="text-align: center;"> 
+            <h1 class="display-4">Coding Quiz</h1>
+            <p class="lead">
             Try to answer the following code-related questions within the time limit. Keep in mind that incorrect answers will penalize your score/time by five seconds
-        </p>
+            </p>
        
-        <a class="btn btn-primary btn-lg" href="#" role="button" id="startBtn">Start Quiz</a>
-      </div>
+            <a class="btn btn-primary btn-lg" href="#" role="button" id="startBtn">Start Quiz</a>
+        </section>
+        <!-- section for answer buttons -->
+        <section id="takeQuiz" class= "d-none"> 
+            <div>
+                <h2 id="question">
+                </h2>
+            </div>
+            
+            <div>
+                <button type="button" class="btn btn-primary btn-block text-left" id="a1Btn">
+                </button>
+            </div>
+
+            <div>
+                <button type="button" class="btn btn-primary btn-block text-left" id="a2Btn">
+                </button>
+            </div>
+
+            <div>
+                <button type="button" class="btn btn-primary btn-block text-left" id="a3Btn">   
+                </button>
+            </div>
+
+            <div>
+                <button type="button" class="btn btn-primary btn-block text-left" id="a4Btn">
+
+                </button>
+            </div>
+
+            <div>
+                <h3 id="result"></h3>
+            </div>
+        </section>
+        <!-- secion for final score -->
+
+    </div>
 <!-- script link for script.js-->
   <script src="script.js"></script>
 <!-- script link for jQuery first, then Popper.js, then Bootstrap JS -->
