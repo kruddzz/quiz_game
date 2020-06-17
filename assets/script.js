@@ -1,22 +1,20 @@
-// Variables
 var clock = document.getElementById("timer");
 var secondsLeft = 75;
 var clockInterval;
 
-var startQ = document.getElementById("#startQuiz");
-var takeQ = document.getElementById("#takeQuiz");
-var qn = document.getElementById("#question");
-var startB = document.getElementById("#startBtn");
-var answ1 = document.getElementById("#btnA1");
-var answ2 = document.getElementById("#btnA2");
-var answ3 = document.getElementById("#btnA3");
-var answ4 = document.getElementById("#btnA4");
-var quizR = document.getElementById("#result");
-var fScore = document.getElementById("#finalScore");
-var quizD = document.getElementById("#quizDone");
-var quizS = document.getElementById("#Score");
-var int = document.getElementById("#initials");
-var submitB = document.getElementById("#submitBtn");
+var startQ = document.getElementById("startQuiz");
+var takeQ = document.getElementById("takeQuiz");
+var qn = document.getElementById("question");
+var answ1 = document.getElementById("a1Btn");
+var answ2 = document.getElementById("a2Btn");
+var answ3 = document.getElementById("a3Btn");
+var answ4 = document.getElementById("a4Btn");
+var quizR = document.getElementById("result");
+var fScore = document.getElementById("finalScore");
+var quizD = document.getElementById("quizDone");
+var quizS = document.getElementById("score");
+var int = document.getElementById("initials");
+
 
 var numCorrectAnswers = 0;
 var numTotalQuestions = 0;
@@ -56,7 +54,7 @@ takeQ.addEventListener("click", function (event) {
 function loadQuestion() {
     var idxCorrect = -99;
     
-    if (questions [indQuestion] === undefined) {
+    if (questions [idxQuestion] === undefined) {
         //final qestion in array has been reached 
         finQuestion = true;
       
@@ -136,7 +134,7 @@ function setTime() {
   // hide the main section and the quiz section
   takeQ.classList.add("d-none")
   fScore.classList.remove("d-none");
-  document.getElementById("#quizDone").textContent = "All done!";
+  quizD.textContent = "All done!";
   if (!secondsLeft > 0) {
     secondsLeft = 0;
   }
@@ -152,20 +150,62 @@ function setTime() {
   }
   console.log("note: Total questions= " + numTotalQuestions + "\n correct answers= " + numCorrectAnswers + "\n seconds left= " + secondsLeft + "\n final score= " + endScore);
 
-  document.getElementById("#Score").textContent = "Your final score is " + endScore;
+  quizS.textContent = "Your final score is " + endScore;
 
 }
+var startB = document.querySelector("#startBtn");
+var submitB = document.querySelector("#submitBtn");
 
 // Event Listeners
-document.addEventListener("click", startB(event) {
+startB.addEventListener("click", function(event) {
 
-  // user clicks the Start Quiz button
-  // hide the Start Page section and show the TakeQuiz section
-
-  if (event === null) {
-        return;
+    // user clicks the Start Quiz button
+    // hide the startQuiz section and show the takeQuiz section
+  
+    if (event === null) {
+      return;
     }
+  
     takeQuiz();
-});
+  });
 
+  submitB.addEventListener("click", function(event){
+
+    if (event === null) {
+      return;
+    }
+    //Don't allow user to click submit if they haven't entered initials
+    if (int.value.length === 0) {
+      alert("Please enter your initials to submit your quiz score.");
+      return;
+    }
+    
+    // store final score to localstorage
+    // first try to retrieve scores from local storage in case we've taken the quiz before
+  
+    Scores = JSON.parse(localStorage.getItem('highscores'));
+  
+    if (Scores !== null) {
+  
+      Scores.push({
+        'initials': document.int.value,
+        'highscore': endscore
+      });
+    } else {
+      // Converting to JSON string with JSON.stringify()
+      // then saving with localStorage
+      Scores = [];
+      Scores.push({
+        'initials': document.int.value,
+        'highscore': endscore
+      });
+    }
+    localStorage.setItem('highscores', JSON.stringify(Scores));
+    document.submitB.disabled = true;
+    document.submitB.remove("btn-primary");
+
+    fScore.classList.add("d-none");
+    document.location.href= "index.html";
+  
+  });
 
