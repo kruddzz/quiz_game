@@ -44,7 +44,7 @@ takeQ.addEventListener("click", function (event) {
       secondsLeft -= 5;
       checkTimeRemaining();
 
-    }git add
+    }
     
     // load the next question
     idxQuestion++;
@@ -118,8 +118,22 @@ function setTime() {
       showFinalScore();
     }
   }
+  
+  function takeQuiz() {
+
+    //populate 1st quiz question
+   idxQuestion = 0;
+    loadQuestion();
+    // hide the main section
+    startQ.classList.add("d-none");
+    takeQ.classList.remove("d-none");
+  
+    //  start timer 
+    setTime();
+  
+  }
 // Event Listeners
-startB.addEventListener("click", funtion(event) {
+document.addEventListener("click", startB(event) {
 
   // user clicks the Start Quiz button
   // hide the Start Page section and show the TakeQuiz section
