@@ -20,7 +20,7 @@ var submitB = document.getElementById("#submitBtn");
 
 var numCorrectAnswers = 0;
 var numTotalQuestions = 0;
-var intQuestion = 0;  // first question starts at 0
+var idxQuestion = 0;  // first question starts at 0
 var blnCorrect = false;
 var endScore = 0;
 var finQuestion = false;
@@ -44,14 +44,23 @@ takeQ.addEventListener("click", function (event) {
       secondsLeft -= 5;
       checkTimeRemaining();
 
-    }
+    }git add
     
     // load the next question
-    intQuestion++;
+    idxQuestion++;
     loadQuestion();
   }
 
 });
+
+function loadQuestion() {
+    var idxCorrect = -99;
+    if (questions [indQuestion] === undefined) {
+      // We have reached the end of file on our questions array
+   finQuestion = true;
+      
+      return;
+    }
 
 
 // Event Listeners
