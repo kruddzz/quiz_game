@@ -132,6 +132,30 @@ function setTime() {
     setTime();
   
   }
+  function showFinalScore() {
+  // hide the main section and the quiz section
+  takeQ.classList.add("d-none")
+  fScore.classList.remove("d-none");
+  document.getElementById("#quizDone").textContent = "All done!";
+  if (!secondsLeft > 0) {
+    secondsLeft = 0;
+  }
+
+
+  endScore = 0;
+  if (numCorrectAnswers > 0) {
+
+    endScore = Math.round(100 * (numCorrectAnswers / numTotalQuestions) + (0.2 * secondsLeft));
+    if (endScore > 100) {
+      endScore = 100;
+    }
+  }
+  console.log("note: Total questions= " + numTotalQuestions + "\n correct answers= " + numCorrectAnswers + "\n seconds left= " + secondsLeft + "\n final score= " + endScore);
+
+  document.getElementById("#Score").textContent = "Your final score is " + endScore;
+
+}
+
 // Event Listeners
 document.addEventListener("click", startB(event) {
 
@@ -139,10 +163,9 @@ document.addEventListener("click", startB(event) {
   // hide the Start Page section and show the TakeQuiz section
 
   if (event === null) {
-    return;
-  }
-
-  takeQuiz();
+        return;
+    }
+    takeQuiz();
 });
 
 
