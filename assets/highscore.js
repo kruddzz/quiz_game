@@ -32,11 +32,10 @@ var ready = function (fn) {
                 var ol = document.getElementById("scoreList");
                 ol.innerHTML = "";
                 
-                // alert(HighScore + "from local storage");
+
                 //display Highscore from localstorage on the screen element
                 for (let i = 0; i < Scores.length; i++) {
                     console.log(Scores[i].initials);
-               //     var dummy = Scores[i].initials +" "+ Scores[i].highscore;
                     var scoreEl = document.createElement("li");
                     scoreEl.textContent = Scores[i].initials +" "+ Scores[i].highscore;                        
                     scoreListEl.appendChild(scoreEl);
@@ -45,7 +44,6 @@ var ready = function (fn) {
         });
         
         document.getElementById("retakeBtn").onclick = function (event) {
-            // alert("link back to index.html here");
             document.location.href= "index.html";
         }
 

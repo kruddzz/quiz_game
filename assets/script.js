@@ -13,7 +13,6 @@ var quizR = document.getElementById("result");
 var fScore = document.getElementById("finalScore");
 var quizD = document.getElementById("quizDone");
 var quizS = document.getElementById("score");
-var int = document.getElementById("initials");
 
 
 var numCorrectAnswers = 0;
@@ -148,7 +147,7 @@ function setTime() {
   }
   function showFinalScore() {
   // hide the main section and the quiz section
-  takeQ.classList.add("d-none")
+  takeQ.classList.add("d-none");
   fScore.classList.remove("d-none");
   quizD.textContent = "Quiz Complete!";
   if (!secondsLeft > 0) {
@@ -184,6 +183,7 @@ startB.addEventListener("click", function(event) {
   
     takeQuiz();
   });
+  var int = document.getElementById("initials");
 
   submitB.addEventListener("click", function(event){
 
@@ -199,29 +199,30 @@ startB.addEventListener("click", function(event) {
     // store final score to localstorage
     // first try to retrieve scores from local storage in case we've taken the quiz before
   
-    Scores = JSON.parse(localStorage.getItem('highscores'));
+    var Scores = JSON.parse(localStorage.getItem('highscores'));
   
     if (Scores !== null) {
   
       Scores.push({
-        'initials': document.int.value,
-        'highscore': endscore
+        'initials': int.value,
+        'highscore': endScore
       });
-    } else {
+    } 
+    else {
       // Converting to JSON string with JSON.stringify()
       // then saving with localStorage
       Scores = [];
       Scores.push({
-        'initials': document.int.value,
-        'highscore': endscore
+        'initials': int.value,
+        'highscore': endScore
       });
     }
     localStorage.setItem('highscores', JSON.stringify(Scores));
-    document.getElementById("submitBtn").disabled = true;
+
    
 
     fScore.classList.add("d-none");
-    document.location.href= "index.html";
+    document.location.href= "highscores.html";
   
   });
 

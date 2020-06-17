@@ -8,3 +8,6 @@ a {
 }
 
 /* highscore page */
+#retakeBtn {
+    margin-bottom: 5px;
+}
