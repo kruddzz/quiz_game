@@ -14,7 +14,7 @@ WHEN the game is over
 THEN I can save my initials and score
 
 
-![screenshot](assets\Images\quiz.png)
+![screenshot](assets/Images/quiz.png)
 
 
 // Timer
