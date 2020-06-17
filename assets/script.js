@@ -95,8 +95,29 @@ answ4.setAttribute("data-answered", "Incorrect");
       break;
 
   }
-
 }
+
+function setTime() {
+    clockInterval = setInterval(function () {
+      secondsLeft--;
+  
+      if (!secondsLeft > 0) {
+        secondsLeft = 0;
+      }
+      // clock.textContent = "Time: "+ secondsLeft;
+   clock.textContent = "Time: " + secondsLeft.toString().padStart(2, '0');
+      checkTimeRemaining();
+  
+    }, 1000);
+  }
+  function checkTimeRemaining() {
+
+    if (secondsLeft <= 0 || finQuestion) {
+      clearInterval(clockInterval);
+  
+      showFinalScore();
+    }
+  }
 // Event Listeners
 startB.addEventListener("click", funtion(event) {
 
