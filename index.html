@@ -27,66 +27,80 @@
     <div class="jumbotron bg-white mx-auto" style="width: 600px;">
         <!-- Start Quiz secion -->
         <section id="startQuiz" style="text-align: center;"> 
-            <h1 class="display-4">Coding Quiz</h1>
-            <p class="lead">
-            Try to answer the following code-related questions within the time limit. Keep in mind that incorrect answers will penalize your score/time by five seconds
-            </p>
-       
-            <a class="btn btn-primary btn-lg" href="#" role="button" id="startBtn">Start Quiz</a>
+          <div class="row">
+                <br>
+                <div class="col-12">
+                    <h1>Coding Quiz Challenge</h1>
+                    <h4 id="question" class="p-3 m-3">Try to answer the following code-related questions within the time limit. Keep in mind that
+                        incorrect answers will penalize your score/time by five seconds!
+                    </h4>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12 text-center">
+                    <button type="button" class="btn btn-primary" id="startBtn">Start Quiz</button>
+                </div>
+            </div>
         </section>
-        <!-- section for question/answers -->
+        
         <section id="takeQuiz" class= "d-none"> 
-            <div>
-                <h2 id="question">
-                </h2>
+            <div class="row p-1">
+                <div class="col m-3" >
+                    <h2 id="Question"></h2>
+                </div>
             </div>
-            
-            <div>
-                <button type="button" class="btn btn-primary btn-block text-left" id="a1Btn">
-                </button>
-            </div>
-
-            <div>
-                <button type="button" class="btn btn-primary btn-block text-left" id="a2Btn">
-                </button>
+            <div class="row p-1">
+                <div class="col-6">
+                    <button type="button" class="btn btn-primary btn-block text-left" id="a1Btn"></button>
+                </div>
             </div>
 
-            <div>
-                <button type="button" class="btn btn-primary btn-block text-left" id="a3Btn">   
-                </button>
+            <div class="row p-1">
+                <div class="col-6">
+                    <button type="button" class="btn btn-primary btn-block text-left" id="a2Btn"></button>
+                </div>
             </div>
 
-            <div>
-                <button type="button" class="btn btn-primary btn-block text-left" id="a4Btn">
-
-                </button>
+            <div class="row p-1">
+                <div class="col-6">
+                    <button type="button" class="btn btn-primary btn-block text-left" id="a3Btn"></button>
+                </div>
             </div>
 
-            <div>
-                <h3 id="result"></h3>
+            <div class="row p-1">
+                <div class="col-6">
+                    <button type="button" class="btn btn-primary btn-block text-left" id="a4Btn"></button>
+                </div>
+            </div>
+            <div class="row p-1">
+                <div class="col-6">
+                    <h3 id="result"></h3>
+                    
+                </div>
             </div>
         </section>
-        <!-- section for final score -->
         <section id="finalScore" class= "d-none">
-            <div style = "text-align: left;">
-                <h2 id="quizDone"></h2>
-                <h6 id="score"></h6>
+            <div class="row p-1">
+                
+                <div class="col-12 text-left">
+                    <h2 id="quizDone"></h2>
+                    <h6 id="score"></h6>
+                </div>
             </div>
-            
-            <div>
-                <label for="YourInitials">Enter Initials:</label>
-                <input type="text" name="YourInitials" id="initials">
-                <button type="submit" class="btn btn-primary btn-sm" id="submitBtn">
-                    Submit
-                </button>
+            <div class="row text-left">
+                <div class="col-12 text-left">
+                    <label for="YourInitials">Enter initials:</label>
+                    <input type="text" name="YourInitials" id="initials">
+                    <button type="submit" class="btn btn-primary btn-sm" id="submitBtn">Submit</button>
+                </div>
             </div>
-            
         </section>
 
 
     </div>
 <!-- script link for script.js-->
   <script src="assets/script.js"></script>
+  <script src="assets/questions.js"></script>
 <!-- script link for jQuery first, then Popper.js, then Bootstrap JS -->
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
