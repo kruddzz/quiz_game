@@ -53,3 +53,5 @@ THEN I can save my initials and score
 // should have a clear high score button
 // retake quiz button should take you back to the start page
 // clear high score button should clear all scores.
+
+Link to application: https://kruddzz.github.io/quiz_game/
