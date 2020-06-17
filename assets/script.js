@@ -21,7 +21,15 @@ var submitB = document.getElementById("#submitBtn");
 
 
 
+// Event Listeners
+startB.addEventListener("click", funtion(event)) {
+    
+  // user clicks the Start Quiz button
+  // hide the startQuiz section and show the takeQuiz section
 
-// functions
+  if (event === null) {
+    return;
+  }
 
-// event listeners
+  takeQuiz();
+}
