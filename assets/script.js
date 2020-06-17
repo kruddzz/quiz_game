@@ -55,14 +55,48 @@ takeQ.addEventListener("click", function (event) {
 
 function loadQuestion() {
     var idxCorrect = -99;
+    
     if (questions [indQuestion] === undefined) {
-      // We have reached the end of file on our questions array
-   finQuestion = true;
+        //final qestion in array has been reached 
+        finQuestion = true;
       
-      return;
+        return;
     }
 
 
+  numTotalQuestions++;
+
+qn.textContent = questions [idxQuestion].title;
+
+answ1.textContent = questions [idxQuestion].choices[0];
+answ2.textContent = questions [idxQuestion].choices[1];
+answ3.textContent = questions [idxQuestion].choices[2];
+answ4.textContent = questions [idxQuestion].choices[3];
+
+    // using .setAattribute allows us to add specified elements to the answer buttons
+answ1.setAttribute("data-answered", "Incorrect");
+answ2.setAttribute("data-answered", "Incorrect");
+answ3.setAttribute("data-answered", "Incorrect");
+answ4.setAttribute("data-answered", "Incorrect");
+
+    // used a switch statement to execute the correct block of code
+  switch (idxCorrect) {
+    case 0:
+      answ1.setAttribute("data-answered", "Correct");
+      break;
+    case 1:
+      answ2.setAttribute("data-answered", "Correct");
+      break;
+    case 2:
+      answ3.setAttribute("data-answered", "Correct");
+      break;
+    case 3:
+      answ4.setAttribute("data-answered", "Correct");
+      break;
+
+  }
+
+}
 // Event Listeners
 startB.addEventListener("click", funtion(event) {
 
